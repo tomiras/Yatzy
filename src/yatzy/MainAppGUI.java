@@ -6,8 +6,10 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -30,7 +32,7 @@ public class MainAppGUI extends Application {
         this.initContent(pane);
         Scene scene = new Scene(pane);
         stage.setScene(scene);
-        stage.setResizable(true);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -52,7 +54,12 @@ public class MainAppGUI extends Application {
     private Label lblGameStatus;
     private int rolled = 0;
     private final String ICON_IMG = "dice_icon.png";
+    private final String GAMES_IMG = "play_game.png";
     private boolean txfResultIsFocus = false; //Variable to handle if a Result Textfield has already been selected
+
+    private HBox gfxBox;
+    private ToggleGroup gfxGroup;
+    private Label lblGfx;
 
     // ---------------------------------------------------------------------
 
@@ -106,8 +113,37 @@ public class MainAppGUI extends Application {
 
         // ---------------------------------------------------------------------
 
+        GridPane gfxSelectPane = new GridPane();
+        pane.add(gfxSelectPane, 0, 1);
+        gfxSelectPane.setGridLinesVisible(false);
+        gfxSelectPane.setPadding(new Insets(10));
+        gfxSelectPane.setVgap(10);
+        gfxSelectPane.setHgap(20);
+        gfxSelectPane.setStyle("-fx-border-color: black");
+
+        lblGfx = new Label("Select dice style");
+        gfxSelectPane.add(lblGfx, 0, 1, 1, 1);
+
+        gfxBox = new HBox();
+        gfxBox.setSpacing(30.0);
+        gfxGroup = new ToggleGroup();
+        RadioButton rb;
+        String[] diceGfx = { "Numbers", "Cubes"};
+        for(int i = 0; i < diceGfx.length; i++){
+            rb = new RadioButton();
+            rb.setToggleGroup(gfxGroup);
+            rb.setText(diceGfx[i]);
+            gfxBox.getChildren().add(rb);
+        }
+
+        gfxSelectPane.add(gfxBox,2, 1, 6, 1);
+
+
+
+        // ---------------------------------------------------------------------
+
         GridPane scorePane = new GridPane();
-        pane.add(scorePane, 0, 1);
+        pane.add(scorePane, 0, 2);
         scorePane.setGridLinesVisible(false);
         scorePane.setPadding(new Insets(10));
         scorePane.setVgap(5);
@@ -268,6 +304,11 @@ public class MainAppGUI extends Application {
                     txfResults[i].setDisable(false);
                     txfResults[i].setEditable(false);
                 }
+
+                gfxGroup.getToggles().forEach(toggle -> {
+                    RadioButton rb = (RadioButton) toggle ;
+                    rb.setDisable(true);
+                });
 
                 txfSumSame.setDisable(false);
                 txfSumSame.setEditable(false);
@@ -431,6 +472,10 @@ public class MainAppGUI extends Application {
             }
         }
 
+        private void getCubes(){
+
+        }
+
         /**
          * Method to update the lblRolled Label with amount of rolls.
          */
@@ -537,7 +582,19 @@ public class MainAppGUI extends Application {
         }
 
         private void easterEggAction(){
-            System.out.println("Java is fun, but can be difficult");
+            Image easter = new Image(GAMES_IMG);
+            ImageView gameImageView = new ImageView(easter);
+            //gameImageView.setFitWidth(256);
+            //gameImageView.setFitHeight(256);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("PLAY GAME!");
+            alert.setGraphic(gameImageView);
+            alert.setContentText(null);
+            alert.setHeaderText(null);
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(ICON_IMG));
+            alert.show();
         }
     }
 }

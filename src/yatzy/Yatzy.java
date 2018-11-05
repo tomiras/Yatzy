@@ -95,7 +95,7 @@ public class Yatzy {
      * Frequency at index v is the number of dice with the face value v, 1 <= v <= 6. <br/>
      * Index 0 is not used.
      */
-    public int[] freqFaceValue() {
+    private int[] freqFaceValue() {
         // TODO: Implement
         int[] freq = new int[7];
         int count = 0;
@@ -138,7 +138,7 @@ public class Yatzy {
         // TODO: Implement
         //Looping true freqFaceValue() to get faceValue that occurs n times or less
         //For each faceValue that occurs n times or less is multiplied with n and the maximum value of that calculation is then returned
-        //Reason for finding less frequency then n is to also find values that occurs more then n times so we can see max values of n*value for values
+        //Reason for finding less n then frequency is to also find values that occurs more then n times so we can see max values of n*value for values
         //occurring more then n times
         //Eg. dice values 2, 2, 4, 4, 4 with n = 2 will make it possible to select the 2*4 instead of only 2*2
         int tmpValue = 0;
