@@ -83,7 +83,7 @@ public class MainAppGUI extends Application {
 
         // TODO: initialize txfValues, chbHolds, btnRoll and lblRolled
         txfValues = new TextField[5];
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < txfValues.length; i++){
             TextField txfDice = new TextField();
             txfDice.setPrefSize(50,50);
             txfDice.setEditable(false);

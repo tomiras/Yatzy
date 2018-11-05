@@ -54,9 +54,10 @@ public class MainAppTest {
     }
 
 
+    //freqFaceValue() needs to be changed to public in Yatzy class for this test to work
     static void TestFreq(Yatzy yatzyGame){
         for(int i = 1; i <= 6; i++){
-            System.out.println(i + " occurs " + yatzyGame.freqFaceValue()[i] + " times");
+            //System.out.println(i + " occurs " + yatzyGame.freqFaceValue()[i] + " times");
         }
     }
 
