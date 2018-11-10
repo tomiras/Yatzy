@@ -41,7 +41,9 @@ public class MainAppGUI extends Application {
     // Private class to help interact with the Yatzy game object and the GUI
     private Controller controller = new Controller();
     // Shows the face values of the 5 dice.
-    private TextField[] txfValues;
+    //private TextField[] txfValues;
+    private Label[] lblValues;
+    private Image[] cubeDices;
     // Shows the hold status of the 5 dice.
     private CheckBox[] chbHolds;
     private TextField[] txfResults;
@@ -53,8 +55,8 @@ public class MainAppGUI extends Application {
     private Button btnRoll;
     private Label lblGameStatus;
     private int rolled = 0;
-    private final String ICON_IMG = "dice_icon.png";
-    private final String GAMES_IMG = "play_game.png";
+    private final String ICON_IMG = "/images/dice_icon.png";
+    private final String GAMES_IMG = "/images/play_game.png";
     private boolean txfResultIsFocus = false; //Variable to handle if a Result Textfield has already been selected
 
     private HBox gfxBox;
@@ -82,16 +84,17 @@ public class MainAppGUI extends Application {
         // ---------------------------------------------------------------------
 
         // TODO: initialize txfValues, chbHolds, btnRoll and lblRolled
-        txfValues = new TextField[5];
-        for(int i = 0; i < txfValues.length; i++){
-            TextField txfDice = new TextField();
-            txfDice.setPrefSize(50,50);
-            txfDice.setEditable(false);
-            txfDice.setDisable(true);
-            txfDice.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
-            txfDice.setAlignment(Pos.CENTER);
-            txfValues[i] = txfDice;
-            dicePane.add(txfDice, i+1, 1, 1,2);
+        lblValues = new Label[5];
+        for(int i = 0; i < lblValues.length; i++){
+            Label lblDice = new Label();
+            lblDice.setPrefSize(53,52);
+
+            lblDice.setDisable(true);
+            lblDice.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
+            lblDice.setStyle("-fx-border-color: linear-gradient(#ebe8eb, #8f8f8f);");
+            lblDice.setAlignment(Pos.CENTER);
+            lblValues[i] = lblDice;
+            dicePane.add(lblDice, i+1, 1, 1,2);
         }
 
         chbHolds = new CheckBox[5];
@@ -102,10 +105,10 @@ public class MainAppGUI extends Application {
             dicePane.add(chbHold, i+1, 3, 1, 1);
         }
 
-        lblGameStatus = new Label("Press Roll to start");
+        lblGameStatus = new Label("Press Start");
         dicePane.add(lblGameStatus, 1, 4, 2, 1);
 
-        btnRoll = new Button("Roll");
+        btnRoll = new Button("Start");
         dicePane.add(btnRoll, 4, 4, 1, 1);
 
         lblRolled = new Label("Rolled: " + rolled);
@@ -133,6 +136,7 @@ public class MainAppGUI extends Application {
             rb = new RadioButton();
             rb.setToggleGroup(gfxGroup);
             rb.setText(diceGfx[i]);
+            rb.setUserData(diceGfx[i]);
             gfxBox.getChildren().add(rb);
         }
 
@@ -178,6 +182,12 @@ public class MainAppGUI extends Application {
             scorePane.add(lblResult, 0, 1+i, 1, 1);
         }
 
+        //Initializing dicecubes images into an Image array to represent the 6 different values on dices
+        cubeDices = new Image[7];
+        for(int i = 0; i < cubeDices.length; i++){
+            cubeDices[i] = new Image("/images/dices/dice_"+(i)+".png");
+        }
+
         //Initializing the 15 different result Textfield in the scorepane and
         // giving them actions depending on if a txfResult Textfield is selected or not to be able to de-select a Textfield
         txfResults = new TextField[15];
@@ -185,6 +195,7 @@ public class MainAppGUI extends Application {
             TextField txfResult = new TextField();
             txfResult.setPrefSize(50, 5);
             txfResult.setDisable(true);
+            txfResult.setEditable(false);
             txfResult.setOnMouseClicked(event -> {
                 if(event.getButton() == MouseButton.PRIMARY)
                     if(txfResultIsFocus){
@@ -211,9 +222,13 @@ public class MainAppGUI extends Application {
         txfTotal = new TextField();
 
         txfSumSame.setDisable(true);
+        txfSumSame.setEditable(false);
         txfBonus.setDisable(true);
+        txfBonus.setEditable(false);
         txfSumOther.setDisable(true);
+        txfSumOther.setEditable(false);
         txfTotal.setDisable(true);
+        txfTotal.setEditable(false);
 
         txfSumSame.setPrefSize(40, 5);
         txfBonus.setPrefSize(40, 5);
@@ -233,8 +248,12 @@ public class MainAppGUI extends Application {
         scorePane.add(txfTotal, 5, 15, 1, 1);
 
         btnRoll.setOnAction(event -> {
-            if(!this.controller.getGameStatus())
+            if(this.controller.getEndStatus() && !this.controller.getGameStatus()){
+                this.controller.initializeGame();
+            }
+            else if(!this.controller.getEndStatus() && !this.controller.getGameStatus()){
                 this.controller.startGameAction();
+            }
             else
                 this.controller.rollDiceAction();
         });
@@ -272,61 +291,114 @@ public class MainAppGUI extends Application {
         private boolean getGameStatus(){
             return gameStarted;
         }
+        private boolean getEndStatus() { return gameEnded; }
+
+        private void initializeGame(){
+            lblGameStatus.setText("Press Start");
+            btnRoll.setText("Start");
+            lblRolled.setText("Rolled: "+ rolled);
+            roundCount = 0;
+
+            resetThrowCount();
+            isSelected = false;
+
+            sumSame = 0;
+            sumBonus = 0;
+            sumOther = 0;
+            sumTotal = 0;
+
+            txfSumSame.setText(String.valueOf(sumSame));
+            txfBonus.setText(String.valueOf(sumBonus));
+            txfSumOther.setText(String.valueOf(sumOther));
+            txfTotal.setText(String.valueOf(sumTotal));
+
+            for (int i = 0; i < 5; i++) {
+                lblValues[i].setDisable(true);
+                lblValues[i].setText("");
+                lblValues[i].setGraphic(null);
+            }
+
+            for (int i = 0; i < chbHolds.length; i++) {
+                chbHolds[i].setDisable(true);
+            }
+            for (int i = 0; i < txfResults.length; i++) {
+                txfResults[i].setDisable(true);
+                txfResults[i].setEditable(false);
+                txfResults[i].setText("");
+            }
+
+            gfxGroup.getToggles().forEach(toggle -> {
+                RadioButton rb = (RadioButton) toggle ;
+                rb.setDisable(false);
+            });
+
+            txfSumSame.setDisable(true);
+            txfBonus.setDisable(true);
+            txfSumOther.setDisable(true);
+            txfTotal.setDisable(true);
+
+            btnRoll.setDisable(false);
+
+            gameEnded = false;
+
+        }
 
         /**
          * Method to initialize all sum variables and enabling fields
          */
-        private void startGameAction(){
-            if(!gameEnded) {
-                resetRound();
+        private void startGameAction() {
+            if (gfxGroup.getSelectedToggle() != null) {
+                if (!gameEnded) {
+                    gameStarted = true;
 
-                gameStarted = true;
-                isSelected = false;
+                    btnRoll.setText("Roll");
 
-                sumSame = 0;
-                sumBonus = 0;
-                sumOther = 0;
-                sumTotal = 0;
+                    gfxGroup.getToggles().forEach(toggle -> {
+                        RadioButton rb = (RadioButton) toggle;
+                        rb.setDisable(true);
+                    });
 
-                txfSumSame.setText(String.valueOf(sumSame));
-                txfBonus.setText(String.valueOf(sumBonus));
-                txfSumOther.setText(String.valueOf(sumOther));
-                txfTotal.setText(String.valueOf(sumTotal));
+                    for (TextField results : txfResults) {
+                        results.setDisable(false);
+                        results.setEditable(false);
+                    }
+                    for (int i = 0; i < 5; i++) {
+                        lblValues[i].setDisable(false);
+                    }
 
-                for (int i = 0; i < 5; i++) {
-                    txfValues[i].setDisable(false);
+                    for (int i = 0; i < chbHolds.length; i++) {
+                        chbHolds[i].setDisable(false);
+                    }
+                    for (int i = 0; i < txfResults.length; i++) {
+                        txfResults[i].setDisable(false);
+                        txfResults[i].setEditable(false);
+                        txfResults[i].setText("");
+                    }
+
+                    txfSumSame.setDisable(false);
+                    txfBonus.setDisable(false);
+                    txfSumOther.setDisable(false);
+                    txfTotal.setDisable(false);
+
+                    btnRoll.setDisable(false);
+
+                    lblGameStatus.setText("Game in Progress");
+
+                    roundCount = 1;
+
+                    //Rolling the dices
+                    rollDiceAction();
                 }
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Select Dicestyle");
+                alert.setHeaderText("No Dice style selected");
+                alert.setContentText("Select a desired Dicestyle");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(ICON_IMG));
+                alert.show();
 
-                for (int i = 0; i < chbHolds.length; i++) {
-                    chbHolds[i].setDisable(false);
-                }
-                for (int i = 0; i < txfResults.length; i++) {
-                    txfResults[i].setDisable(false);
-                    txfResults[i].setEditable(false);
-                }
-
-                gfxGroup.getToggles().forEach(toggle -> {
-                    RadioButton rb = (RadioButton) toggle ;
-                    rb.setDisable(true);
-                });
-
-                txfSumSame.setDisable(false);
-                txfSumSame.setEditable(false);
-                txfBonus.setDisable(false);
-                txfBonus.setEditable(false);
-                txfSumOther.setDisable(false);
-                txfSumOther.setEditable(false);
-                txfTotal.setDisable(false);
-                txfTotal.setEditable(false);
-
-                btnRoll.setDisable(false);
-
-                lblGameStatus.setText("Game in Progress");
-
-                roundCount = 1;
-
-                //Rolling the dices
-                rollDiceAction();
             }
         }
 
@@ -350,7 +422,7 @@ public class MainAppGUI extends Application {
                     stage.getIcons().add(new Image(ICON_IMG));
                     alert.show();
                 } else if (isSelected) {
-                    resetRound();
+                    resetThrowCount();
                 }
                 //Calculating and setting scores from the 4 sum Textfields
                 calcScores();
@@ -377,7 +449,12 @@ public class MainAppGUI extends Application {
                 throwCount = yatzy.getThrowCount();
                 isSelected = false;
 
-                getDices();
+                if(gfxGroup.getSelectedToggle().getUserData() == "Numbers"){
+                    getDices();
+                }
+                else if(gfxGroup.getSelectedToggle().getUserData() == "Cubes"){
+                    getCubes();
+                }
                 getRolls();
                 getResults();
 
@@ -390,7 +467,7 @@ public class MainAppGUI extends Application {
         /**
          * Method to resetting all holds when a result as been selected and increasing roundCount +1
          */
-        private void resetRound(){
+        private void resetThrowCount(){
             for (int i = 0; i < chbHolds.length; i++) {
                 chbHolds[i].setSelected(false);
             }
@@ -403,6 +480,7 @@ public class MainAppGUI extends Application {
          */
         private void endGame(){
             gameEnded = true;
+            gameStarted = false;
             lblGameStatus.setText("Game ended");
             btnRoll.setDisable(true);
             txfSumSame.setDisable(true);
@@ -410,12 +488,17 @@ public class MainAppGUI extends Application {
             txfBonus.setDisable(true);
             txfTotal.setDisable(true);
             for (int i = 0; i < 5; i++) {
-                txfValues[i].setDisable(true);
+                lblValues[i].setDisable(true);
             }
 
             for (int i = 0; i < chbHolds.length; i++) {
                 chbHolds[i].setDisable(true);
             }
+
+            gfxGroup.getToggles().forEach(toggle -> {
+                RadioButton rb = (RadioButton) toggle ;
+                rb.setSelected(false);
+            });
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("GAME OVER");
@@ -426,8 +509,8 @@ public class MainAppGUI extends Application {
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK){
-                gameEnded = false;
-                startGameAction();
+                //gameEnded = false;
+                initializeGame();
             }
         }
 
@@ -467,13 +550,24 @@ public class MainAppGUI extends Application {
          * Method to show the values of the 5 dices from the Yatzy game object in the 5 txfDice Textfields
          */
         private void getDices(){
-            for(int i = 0; i < txfValues.length; i++){
-                txfValues[i].setText(String.valueOf(yatzy.getValues()[i]));
+            for(int i = 0; i < lblValues.length; i++){
+                lblValues[i].setText(String.valueOf(yatzy.getValues()[i]));
             }
         }
 
         private void getCubes(){
-
+            for(int i = 0; i < lblValues.length; i++){
+                int cubeValue = yatzy.getValues()[i];
+                switch(cubeValue){
+                    case 1: lblValues[i].setGraphic(new ImageView(cubeDices[1])); break;
+                    case 2: lblValues[i].setGraphic(new ImageView(cubeDices[2])); break;
+                    case 3: lblValues[i].setGraphic(new ImageView(cubeDices[3])); break;
+                    case 4: lblValues[i].setGraphic(new ImageView(cubeDices[4])); break;
+                    case 5: lblValues[i].setGraphic(new ImageView(cubeDices[5])); break;
+                    case 6: lblValues[i].setGraphic(new ImageView(cubeDices[6])); break;
+                    default: lblValues[i].setGraphic(new ImageView(cubeDices[0])); break;
+                }
+            }
         }
 
         /**
@@ -533,10 +627,10 @@ public class MainAppGUI extends Application {
 
         }
 
-         /**
+        /**
          * Method to remove focus from a Result Textfield and reverse any accumulated values from select action
-          * Setting isSelected for rollDiceAction() to false
-          * Taking the current scorePane Gridpane as parameter to be able to force focus the overall scorePane.
+         * Setting isSelected for rollDiceAction() to false
+         * Taking the current scorePane Gridpane as parameter to be able to force focus the overall scorePane.
          * @param scorePane
          */
         private void deSelectResultAction(GridPane scorePane){
@@ -598,6 +692,3 @@ public class MainAppGUI extends Application {
         }
     }
 }
-
-
-

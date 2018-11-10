@@ -7,15 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d91a587-7b29-4dad-98f6-be05cc63dabd" name="Default Changelist" comment="Exam Delivery">
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/images.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Yatzy_jar/Yatzy_exe.7z" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Yatzy_jar/Yatzy_exe.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yatzy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Yatzy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dices/dice_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dices/dice_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dices/dice_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dices/dice_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dices/dice_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dices/dice_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_blank.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dices/dice_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/dice_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/dice_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/play_game.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/images/play_game.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yatzy/yatzy/MainAppGUI$Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/yatzy/MainAppGUI$Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Yatzy/yatzy/MainAppGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/yatzy/MainAppGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/yatzy/MainAppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/yatzy/MainAppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Yatzy/yatzy/Yatzy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Yatzy/yatzy/Yatzy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dices/dice_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dices/dice_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dices/dice_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dices/dice_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dices/dice_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dices/dice_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_blank.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dices/dice_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dice_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/dice_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/play_game.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/play_game.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/yatzy/MainAppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yatzy/MainAppGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yatzy/MainAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yatzy/MainAppTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,12 +82,14 @@
     <session id="887208354">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="3" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -87,48 +106,53 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="27" />
+          <entry key="java" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="27" />
+          <entry key="JAVA" value="30" />
         </counts>
       </usages-collector>
     </session>
     <session id="671221465">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.7" value="5" />
+          <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="13" />
+          <entry key="eml" value="1" />
+          <entry key="java" value="17" />
           <entry key="png" value="2" />
+          <entry key="project" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Eclipse" value="1" />
           <entry key="Image" value="2" />
-          <entry key="JAVA" value="13" />
+          <entry key="JAVA" value="17" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="12022" />
+          <entry key="java" value="15191" />
           <entry key="txt" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12022" />
+          <entry key="JAVA" value="15191" />
           <entry key="PLAIN_TEXT" value="18" />
         </counts>
       </usages-collector>
@@ -139,8 +163,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yatzy/Yatzy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state relative-caret-position="242">
+              <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -148,8 +172,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/yatzy/MainAppGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+            <state>
+              <folding>
+                <element signature="e#604#605#0" expanded="true" />
+                <element signature="e#644#645#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,9 +198,22 @@
       <find>throwCount</find>
       <find>getRolls()</find>
       <find>resetRound()</find>
-      <find>resetRound</find>
       <find>freq</find>
       <find>txfValues</find>
+      <find>gfxGroup.getToggles().forEach</find>
+      <find>gfxGroup</find>
+      <find>cubeDices</find>
+      <find>getDices();</find>
+      <find>resetRound</find>
+      <find>for</find>
+      <find>gameEnded</find>
+      <find>gameStarted</find>
+      <find>gameEndednote</find>
+      <find>btn</find>
+      <find>gameStatus</find>
+      <find>Alert</find>
+      <find>system.pit</find>
+      <find>system.out</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -227,7 +267,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,21 +274,11 @@
               <item name="Yatzy" type="b2602c69:ProjectViewProjectNode" />
               <item name="Yatzy" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Yatzy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Yatzy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Yatzy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Yatzy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="yatzy" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -259,14 +288,14 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="yatzy" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541455916570" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541892954808" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -341,8 +370,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainAppGUI" />
-        <item itemvalue="Application.MainApp (1)" />
         <item itemvalue="Application.MainAppTest" />
+        <item itemvalue="Application.MainApp (1)" />
         <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
@@ -374,7 +403,16 @@
       <workItem from="1541400410235" duration="10461000" />
       <workItem from="1541429443654" duration="4542000" />
       <workItem from="1541447819642" duration="548000" />
-      <workItem from="1541455253583" duration="643000" />
+      <workItem from="1541455253583" duration="3438000" />
+      <workItem from="1541503631554" duration="1399000" />
+      <workItem from="1541532257224" duration="815000" />
+      <workItem from="1541533099396" duration="11483000" />
+      <workItem from="1541578374801" duration="2467000" />
+      <workItem from="1541589805521" duration="9820000" />
+      <workItem from="1541623719328" duration="43000" />
+      <workItem from="1541624551782" duration="9036000" />
+      <workItem from="1541844170521" duration="270000" />
+      <workItem from="1541881924492" duration="10225000" />
     </task>
     <task id="LOCAL-00001" summary="Exam Delivery">
       <created>1541455453592</created>
@@ -387,7 +425,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156124000" />
+    <option name="totallyTimeSpent" value="204477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -400,9 +438,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5083333" visible="true" weight="0.141258" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5083333" visible="true" weight="0.15565032" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -410,7 +447,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20689656" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20689656" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4349277" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -429,7 +466,7 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="right" id="Structure" order="9" sideWeight="0.5016892" side_tool="true" visible="true" weight="0.15298508" />
+      <window_info anchor="right" id="Structure" order="9" sideWeight="0.5016892" side_tool="true" visible="true" weight="0.13006397" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,9 +481,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/yatzy/MainApp.java" />
-    <entry file="file://$PROJECT_DIR$/src/dice_1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dice_1.png" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/application/Application.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/control/TextField.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/Node.java" />
@@ -455,16 +490,7 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/Scene.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/play_game.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yatzy/MainAppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/play_game.png" />
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -472,24 +498,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainApp.java">
+    <entry file="file://$PROJECT_DIR$/src/MainApp.java" />
+    <entry file="file://$PROJECT_DIR$/src/yatzy/MainAppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/control/ButtonBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="120" column="68" selection-start-line="120" selection-start-column="68" selection-end-line="120" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/control/Labeled.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="144" column="45" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yatzy/Yatzy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state relative-caret-position="242">
+          <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Yatzy.eml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/yatzy/MainAppGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+        <state>
+          <folding>
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -561,6 +611,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>images</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
